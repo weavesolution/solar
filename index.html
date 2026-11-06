@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Solar System 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="scene"></div>
+
+  <header class="topbar">
+    <h1>Solar System</h1>
+    <p class="hint">Drag to rotate · Pinch to zoom · Tap a planet</p>
+  </header>
+
+  <aside id="card" class="card" aria-hidden="true">
+    <button id="closeBtn" class="close" aria-label="Back to solar system">✕</button>
+    <div class="card-head">
+      <img id="cardThumb" class="thumb" alt="">
+      <div>
+        <h2 id="cardName"></h2>
+        <p id="cardAbout" class="about"></p>
+      </div>
+    </div>
+    <div class="moon-count">
+      <span id="moonNum" class="num"></span>
+      <span id="moonLabel" class="lbl"></span>
+    </div>
+    <p id="moonTitle" class="section-title">Major moons (shown in 3D)</p>
+    <ul id="moonList" class="moon-list"></ul>
+    <p id="cardNote" class="note"></p>
+    <button id="landBtn" class="land-btn">🚀 Land</button>
+  </aside>
+
+  <div id="surfaceUI" class="surface-ui hidden">
+    <div class="s-top">
+      <button id="takeOffBtn" class="pill">🚀 Take off</button>
+      <div class="s-title"><b id="sName"></b><span id="sCount"></span></div>
+      <button id="clearBtn" class="pill icon" aria-label="Clear this world">🗑</button>
+    </div>
+    <div id="sHint" class="s-hint"></div>
+    <div id="selBar" class="sel-bar hidden">
+      <button data-act="rotate">⟳<span>Rotate</span></button>
+      <button data-act="move">✥<span>Move</span></button>
+      <button data-act="bigger">＋<span>Bigger</span></button>
+      <button data-act="smaller">－<span>Smaller</span></button>
+      <button data-act="delete">🗑<span>Delete</span></button>
+      <button data-act="done">✓<span>Done</span></button>
+    </div>
+    <div id="palette" class="palette"></div>
+  </div>
+
+  <div id="fade"></div>
+
+  <div id="loader">
+    <div class="loader-box">
+      <p>Loading the solar system…</p>
+      <div class="bar"><span id="barFill"></span></div>
+      <p id="loaderMsg" class="loader-msg"></p>
+    </div>
+  </div>
+
+  <footer class="credit">
+    Textures: <a href="https://www.solarsystemscope.com/textures/" target="_blank" rel="noopener">Solar System Scope</a> (CC BY 4.0)
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
